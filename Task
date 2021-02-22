@@ -1,0 +1,79 @@
+1) Write a function to format phone number
+format('380677443021') // =>  '+38 (067) 744-30-21'
+
+2) Write a function to check is date valid
+isValid(2000, 2, 29) // true
+isValid(2001, 2, 29) // false
+
+3) Write a function to find the longest match of non-repetitive characters
+  in a string.
+1213212 => 321
+1243121 => 4312
+ababacsabzab => csabz
+
+4) Write a function to print numbers in array with some period using setTimeout, console.log and "for" loop (do not use arrow functions)
+
+  var periodicIterator = function (array, time) {
+         // your code
+  }
+
+  periodicIterator([3,2,4], 100);
+  3
+  // 100 ms left
+  2
+  // 100 ms left
+  4
+
+
+5) Implement a singleton object
+
+  function MySingleton(){
+         // your code
+  }
+  MySingleton.prototype.download = function(url){  };
+
+  var a = MySingleton();
+  var b = new MySingleton();
+  var c = new MySingleton();
+  var d = MySingleton();
+  console.log(a===b); // true
+  console.log(b===c); // true
+  console.log(c===d); // true
+  console.log(a===d); // true
+
+
+6) Implement bind function yourself (do not use spread operator "...")
+
+  var myBind = function(thisArg, target, arg1, arg2, arg3, ...){
+      // your code
+  };
+  var user = "admin:";
+  var log = {
+      error: myBind(console, console.log, "[Error]", user),
+      warning: myBind(console, console.log, "[Warning]", user)
+  };
+  log.error("File not found!"); // [Error] admin: File not found!
+  log.warning("No timezone set!"); // [Warning] admin: No timezone set!
+
+7*) Implement apply function yourself (do not use eval)
+
+var myApply = function(thisArg, target, args){
+      // your code
+  };
+myApply(console, console.log, ["[Error]", "admin:", "File not found!"]) // [Error] admin: File not found!
+
+8) Create table as React component with filtering  sorting which receive following data:
+...
+const data = {
+ columns: [{ // has N elements (N columns)
+  type: ["string"/"number"]
+  filtering: [true/false], // has filtering input
+  sorting: [true/false], // has sorting arrows
+  style: {} // css styles
+ }],
+ cells: [{  // has M*N elements (M rows)
+  value: // any value
+  style: {} // total cell style is merge with column style and cell (style = {...columns[i].style, ...cells[i*j].style})
+ }]
+}
+return <Table data={data} />
